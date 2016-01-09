@@ -45,4 +45,4 @@ BACKEND_HOST='localhost:3001'
 NODE_ENV=production BACKEND_API_KEY=graphql.example.com BACKEND_API_KEY=7dhas7da78hsd7asdh87asd npm start
 ```
 
-As a backend you can use [Strapi](http://strapi.io/documentation/graphql) - Open-source Node.js framework that supports "GraphQL" out of the box.
+As a backend you can use [reindex.io](https://www.reindex.io/) - GraphQL as service or [Strapi](http://strapi.io/documentation/graphql) - Open-source Node.js framework that supports "GraphQL" out of the box.
