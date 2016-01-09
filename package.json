@@ -10,8 +10,9 @@
     "build": "./node_modules/.bin/rimraf public && NODE_ENV=production webpack -p --config webpack.production.config.js --progress --profile"
   },
   "dependencies": {
-    "express": "^4.13.3",
     "compression": "^1.6.0",
+    "express": "^4.13.3",
+    "express-http-proxy": "^0.6.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   },
@@ -23,7 +24,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "compression-webpack-plugin": "^0.2.0",
-    "css-loader": "^0.23.1",    
+    "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^1.7.0",
     "json-loader": "^0.5.4",
