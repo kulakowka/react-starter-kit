@@ -31,7 +31,7 @@
     "postcss-loader": "^0.8.0",
     "react-transform-hmr": "^1.0.1",
     "rimraf": "^2.5.0",
-    "stats-webpack-plugin": "^0.2.2",
+    "stats-webpack-plugin": "^0.3.0",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.3",
     "webpack": "^1.12.10",
