@@ -9,7 +9,7 @@ export default class MainLayout extends Component {
         <ul className={styles.menu}>
           <li><IndexLink to="/" activeClassName={styles.active}>Root</IndexLink></li>
           <li><Link to="/about" activeClassName={styles.active}>About</Link></li>
-          <li><Link to="/404" activeClassName={styles.active}>404</Link></li>
+          <li><Link to="/404">404</Link></li>
         </ul>
         <div className={styles.content}>
           {this.props.children}
