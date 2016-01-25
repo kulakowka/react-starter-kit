@@ -17,6 +17,11 @@ module.exports = {
     filename: '[name]-[hash].min.js',
     publicPath: '/'
   },
+  resolve: {
+    root: [
+      path.join(__dirname, 'src')
+    ]
+  },
   module: {
     loaders: [{
       test: /\.js?$/,
