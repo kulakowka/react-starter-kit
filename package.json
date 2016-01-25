@@ -13,8 +13,10 @@
     "compression": "^1.6.1",
     "express": "^4.13.4",
     "express-http-proxy": "^0.6.0",
+    "history": "^1.17.0",
     "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react-dom": "^0.14.6",
+    "react-router": "^1.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",

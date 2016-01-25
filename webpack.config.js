@@ -15,6 +15,11 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+  resolve: {
+    root: [
+      path.join(__dirname, 'src')
+    ]
+  },
   module: {
     loaders: [{
       test: /\.js?$/,
