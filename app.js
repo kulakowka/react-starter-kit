@@ -4,26 +4,12 @@ import compress from 'compression'
 import config from './webpack.config'
 import express from 'express'
 import path from 'path'
-import proxy from 'express-http-proxy'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-const BACKEND_API_KEY = process.env.BACKEND_API_KEY || 'dev'
-const BACKEND_HOST = process.env.BACKEND_HOST || 'localhost:3001'
 
 const app = express()
-
-app.use('/graphql', proxy(BACKEND_HOST, {
-  forwardPath (req, res) {
-    return require('url').parse(req.url).path
-  },
-  decorateRequest (req) {
-    req.headers['Content-Type'] = 'application/json'
-    req.headers['API-Key'] = BACKEND_API_KEY
-    return req
-  }
-}))
 
 if (app.get('env') === 'production') {
   app.use(compress())
