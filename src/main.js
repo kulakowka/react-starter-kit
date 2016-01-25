@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom'
-import { IndexRoute, Route, Router } from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'  
+import { IndexRoute, Route, Router, browserHistory } from 'react-router'
 
 // Layouts
 import MainLayout from 'layouts/MainLayout'
@@ -12,7 +11,7 @@ import AboutPage from 'pages/About'
 
 // Render to html
 render(
-  <Router history={createBrowserHistory()}>
+  <Router history={browserHistory}>
     <Route path="/" component={MainLayout}>
       <IndexRoute component={HomePage} />
       <Route path="about" component={AboutPage} />
