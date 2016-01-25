@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom'
 import { IndexRoute, Route, Router } from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import createBrowserHistory from 'history/lib/createBrowserHistory'  
 
 // Layouts
 import MainLayout from 'layouts/MainLayout'
