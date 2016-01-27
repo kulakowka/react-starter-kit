@@ -2,7 +2,9 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-This is my personal react starter kit. 
+This is my personal react starter kit. :beer::beer::beer:
+
+# The project is under active development 
 
 
 
