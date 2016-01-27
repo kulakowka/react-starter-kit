@@ -5,41 +5,41 @@ import Repo from '../components/Repo'
 import User from '../components/User'
 import List from '../components/List'
 
-function loadData(props) {
+function loadData (props) {
   const { fullName } = props
   props.loadRepo(fullName, [ 'description' ])
   props.loadStargazers(fullName)
 }
 
 class RepoPage extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.renderUser = this.renderUser.bind(this)
     this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this)
   }
 
-  componentWillMount() {
+  componentWillMount () {
     loadData(this.props)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (nextProps.fullName !== this.props.fullName) {
       loadData(nextProps)
     }
   }
 
-  handleLoadMoreClick() {
+  handleLoadMoreClick () {
     this.props.loadStargazers(this.props.fullName, true)
   }
 
-  renderUser(user) {
+  renderUser (user) {
     return (
       <User user={user}
             key={user.login} />
     )
   }
 
-  render() {
+  render () {
     const { repo, owner, name } = this.props
     if (!repo || !owner) {
       return <h1><i>Loading {name} details...</i></h1>
@@ -72,7 +72,7 @@ RepoPage.propTypes = {
   loadStargazers: PropTypes.func.isRequired
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps (state, props) {
   const { login, name } = props.params
   const {
     pagination: { stargazersByRepo },

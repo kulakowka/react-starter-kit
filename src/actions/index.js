@@ -6,7 +6,7 @@ export const USER_FAILURE = 'USER_FAILURE'
 
 // Fetches a single user from Github API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
-function fetchUser(login) {
+function fetchUser (login) {
   return {
     [CALL_API]: {
       types: [ USER_REQUEST, USER_SUCCESS, USER_FAILURE ],
@@ -18,7 +18,7 @@ function fetchUser(login) {
 
 // Fetches a single user from Github API unless it is cached.
 // Relies on Redux Thunk middleware.
-export function loadUser(login, requiredFields = []) {
+export function loadUser (login, requiredFields = []) {
   return (dispatch, getState) => {
     const user = getState().entities.users[login]
     if (user && requiredFields.every(key => user.hasOwnProperty(key))) {
@@ -35,7 +35,7 @@ export const REPO_FAILURE = 'REPO_FAILURE'
 
 // Fetches a single repository from Github API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
-function fetchRepo(fullName) {
+function fetchRepo (fullName) {
   return {
     [CALL_API]: {
       types: [ REPO_REQUEST, REPO_SUCCESS, REPO_FAILURE ],
@@ -47,7 +47,7 @@ function fetchRepo(fullName) {
 
 // Fetches a single repository from Github API unless it is cached.
 // Relies on Redux Thunk middleware.
-export function loadRepo(fullName, requiredFields = []) {
+export function loadRepo (fullName, requiredFields = []) {
   return (dispatch, getState) => {
     const repo = getState().entities.repos[fullName]
     if (repo && requiredFields.every(key => repo.hasOwnProperty(key))) {
@@ -64,7 +64,7 @@ export const STARRED_FAILURE = 'STARRED_FAILURE'
 
 // Fetches a page of starred repos by a particular user.
 // Relies on the custom API middleware defined in ../middleware/api.js.
-function fetchStarred(login, nextPageUrl) {
+function fetchStarred (login, nextPageUrl) {
   return {
     login,
     [CALL_API]: {
@@ -78,7 +78,7 @@ function fetchStarred(login, nextPageUrl) {
 // Fetches a page of starred repos by a particular user.
 // Bails out if page is cached and user didn’t specifically request next page.
 // Relies on Redux Thunk middleware.
-export function loadStarred(login, nextPage) {
+export function loadStarred (login, nextPage) {
   return (dispatch, getState) => {
     const {
       nextPageUrl = `users/${login}/starred`,
@@ -99,7 +99,7 @@ export const STARGAZERS_FAILURE = 'STARGAZERS_FAILURE'
 
 // Fetches a page of stargazers for a particular repo.
 // Relies on the custom API middleware defined in ../middleware/api.js.
-function fetchStargazers(fullName, nextPageUrl) {
+function fetchStargazers (fullName, nextPageUrl) {
   return {
     fullName,
     [CALL_API]: {
@@ -113,7 +113,7 @@ function fetchStargazers(fullName, nextPageUrl) {
 // Fetches a page of stargazers for a particular repo.
 // Bails out if page is cached and user didn’t specifically request next page.
 // Relies on Redux Thunk middleware.
-export function loadStargazers(fullName, nextPage) {
+export function loadStargazers (fullName, nextPage) {
   return (dispatch, getState) => {
     const {
       nextPageUrl = `repos/${fullName}/stargazers`,
@@ -131,7 +131,7 @@ export function loadStargazers(fullName, nextPage) {
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 
 // Resets the currently visible error message.
-export function resetErrorMessage() {
+export function resetErrorMessage () {
   return {
     type: RESET_ERROR_MESSAGE
   }

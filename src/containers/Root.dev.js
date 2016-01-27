@@ -4,7 +4,7 @@ import Routes from '../routes'
 import DevTools from './DevTools'
 
 export default class Root extends Component {
-  render() {
+  render () {
     const { store } = this.props
     return (
       <Provider store={store}>

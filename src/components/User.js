@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
 export default class User extends Component {
-  render() {
+  render () {
     const { login, avatarUrl, name } = this.props.user
 
     return (
-      <div className="User">
+      <div className='User'>
         <Link to={`/${login}`}>
-          <img src={avatarUrl} width="72" height="72" />
+          <img src={avatarUrl} width='72' height='72' />
           <h3>
             {login} {name && <span>({name})</span>}
           </h3>

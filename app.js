@@ -8,7 +8,6 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-
 const app = express()
 
 if (app.get('env') === 'production') {

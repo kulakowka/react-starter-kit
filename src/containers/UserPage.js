@@ -6,34 +6,34 @@ import Repo from '../components/Repo'
 import List from '../components/List'
 import zip from 'lodash/zip'
 
-function loadData(props) {
+function loadData (props) {
   const { login } = props
   props.loadUser(login, [ 'name' ])
   props.loadStarred(login)
 }
 
 class UserPage extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.renderRepo = this.renderRepo.bind(this)
     this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this)
   }
 
-  componentWillMount() {
+  componentWillMount () {
     loadData(this.props)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (nextProps.login !== this.props.login) {
       loadData(nextProps)
     }
   }
 
-  handleLoadMoreClick() {
+  handleLoadMoreClick () {
     this.props.loadStarred(this.props.login, true)
   }
 
-  renderRepo([ repo, owner ]) {
+  renderRepo ([ repo, owner ]) {
     return (
       <Repo repo={repo}
             owner={owner}
@@ -41,7 +41,7 @@ class UserPage extends Component {
     )
   }
 
-  render() {
+  render () {
     const { user, login } = this.props
     if (!user) {
       return <h1><i>Loading {login}’s profile...</i></h1>
@@ -72,7 +72,7 @@ UserPage.propTypes = {
   loadStarred: PropTypes.func.isRequired
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps (state, props) {
   const { login } = props.params
   const {
     pagination: { starredByUser },

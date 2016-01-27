@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import Routes from '../routes'
 
 export default class Root extends Component {
-  render() {
+  render () {
     const { store } = this.props
     return (
       <Provider store={store}>

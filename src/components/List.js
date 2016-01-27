@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 export default class List extends Component {
-  renderLoadMore() {
+  renderLoadMore () {
     const { isFetching, onLoadMoreClick } = this.props
     return (
       <button style={{ fontSize: '150%' }}
@@ -12,7 +12,7 @@ export default class List extends Component {
     )
   }
 
-  render() {
+  render () {
     const {
       isFetching, nextPageUrl, pageCount,
       items, renderItem, loadingLabel

@@ -3,13 +3,13 @@ import { Link } from 'react-router'
 
 export default class Repo extends Component {
 
-  render() {
+  render () {
     const { repo, owner } = this.props
     const { login } = owner
     const { name, description } = repo
 
     return (
-      <div className="Repo">
+      <div className='Repo'>
         <h3>
           <Link to={`/${login}/${name}`}>
             {name}
