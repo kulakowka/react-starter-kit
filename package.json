@@ -6,8 +6,8 @@
   "author": "Anton Kulakov",
   "license": "MIT",
   "scripts": {
-    "start": "node -r babel-register bin/www",
-    "build": "./node_modules/.bin/rimraf public && NODE_ENV=production webpack -p --config webpack.production.config.js --progress --profile"
+    "start": "./node_modules/.bin/rimraf public && node -r babel-register bin/www",
+    "build": "./node_modules/.bin/rimraf public && NODE_ENV=production ./node_modules/.bin/webpack -p --config webpack.production.config.js --progress --profile"
   },
   "dependencies": {
     "babel-preset-es2015-loose": "^7.0.0",

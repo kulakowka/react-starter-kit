@@ -36,7 +36,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new CompressionPlugin(),
+    // new CompressionPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
