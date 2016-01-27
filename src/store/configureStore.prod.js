@@ -6,9 +6,9 @@ import api from '../middleware/api'
 import rootReducer from '../reducers'
 
 const finalCreateStore = compose(
-  applyMiddleware(thunk, api, syncHistory(browserHistory)),
+  applyMiddleware(thunk, api, syncHistory(browserHistory))
 )(createStore)
 
-export default function configureStore(initialState) {
+export default function configureStore (initialState) {
   return finalCreateStore(rootReducer, initialState)
 }

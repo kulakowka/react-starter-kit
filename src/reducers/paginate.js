@@ -3,7 +3,7 @@ import union from 'lodash/union'
 
 // Creates a reducer managing pagination, given the action types to handle,
 // and a function telling how to extract the key from an action.
-export default function paginate({ types, mapActionToKey }) {
+export default function paginate ({ types, mapActionToKey }) {
   if (!Array.isArray(types) || types.length !== 3) {
     throw new Error('Expected types to be an array of three elements.')
   }
@@ -16,7 +16,7 @@ export default function paginate({ types, mapActionToKey }) {
 
   const [ requestType, successType, failureType ] = types
 
-  function updatePagination(state = {
+  function updatePagination (state = {
     isFetching: false,
     nextPageUrl: undefined,
     pageCount: 0,
@@ -43,7 +43,7 @@ export default function paginate({ types, mapActionToKey }) {
     }
   }
 
-  return function updatePaginationByKey(state = {}, action) {
+  return function updatePaginationByKey (state = {}, action) {
     switch (action.type) {
       case requestType:
       case successType:

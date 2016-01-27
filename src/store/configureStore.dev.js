@@ -14,12 +14,12 @@ const finalCreateStore = compose(
   DevTools.instrument()
 )(createStore)
 
-export default function configureStore(initialState) {
+export default function configureStore (initialState) {
   const store = finalCreateStore(rootReducer, initialState)
-  
+
   // Required for replaying actions from devtools to work
   reduxRouterMiddleware.listenForReplays(store)
-  
+
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {

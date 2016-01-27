@@ -5,22 +5,22 @@ import Explore from '../components/Explore'
 import { resetErrorMessage } from '../actions'
 
 class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
     this.handleDismissClick = this.handleDismissClick.bind(this)
   }
 
-  handleDismissClick(e) {
+  handleDismissClick (e) {
     this.props.resetErrorMessage()
     e.preventDefault()
   }
 
-  handleChange(nextValue) {
+  handleChange (nextValue) {
     this.props.push(`/${nextValue}`)
   }
 
-  renderErrorMessage() {
+  renderErrorMessage () {
     const { errorMessage } = this.props
     if (!errorMessage) {
       return null
@@ -30,20 +30,16 @@ class App extends Component {
       <p style={{ backgroundColor: '#e99', padding: 10 }}>
         <b>{errorMessage}</b>
         {' '}
-        (<a href="#"
-            onClick={this.handleDismissClick}>
-          Dismiss
-        </a>)
+        (<a href='#' onClick={this.handleDismissClick}>Dismiss</a>)
       </p>
     )
   }
 
-  render() {
+  render () {
     const { children, inputValue } = this.props
     return (
       <div>
-        <Explore value={inputValue}
-                 onChange={this.handleChange} />
+        <Explore value={inputValue} onChange={this.handleChange} />
         <hr />
         {this.renderErrorMessage()}
         {children}
@@ -62,7 +58,7 @@ App.propTypes = {
   children: PropTypes.node
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     errorMessage: state.errorMessage,
     inputValue: state.routing.location.pathname.substring(1)
